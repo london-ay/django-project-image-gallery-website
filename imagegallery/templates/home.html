@@ -28,7 +28,7 @@ https://templatemo.com/tm-556-catalog-z
     </div>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <i class="fas fa-film mr-2"></i>
                 Catalog-Z
             </a>
@@ -65,9 +65,15 @@ https://templatemo.com/tm-556-catalog-z
 
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
-            <h2 class="col-6 tm-text-primary">
-                Latest Photos
-            </h2>
+            {% if query %}
+                <h2 class="col-6 tm-text-primary">
+                    Search Results For: {{ query|title }}
+                </h2>
+            {% else %}
+                <h2 class="col-6 tm-text-primary">
+                    All Photos
+                </h2>
+            {% endif %}
             <div class="col-6 d-flex justify-content-end align-items-center">
                 <form action="" class="tm-text-primary">
                     Page <input type="text" value="1" size="1" class="tm-input-paging tm-text-primary"> of 200
@@ -88,7 +94,7 @@ https://templatemo.com/tm-556-catalog-z
                     <div class="d-flex justify-content-between tm-text-gray">
                         <span class="tm-text-gray-light">{{ photo.created_at }}</span>
                         <span>9,906 views</span>
-                    </div>
+                    </div> 
                 </div>
             {% endfor %}
         </div> <!-- row -->
@@ -148,6 +154,13 @@ https://templatemo.com/tm-556-catalog-z
     <script>
         $(window).on("load", function() {
             $('body').addClass('loaded');
+            $('.tm-search-form').first().submit( (event) => {
+                event.preventDefault();
+                const query = $('.tm-search-form input[type="search"]').first().val();
+                const url = '{{ site_url }}' + '/?query=' + query;
+                window.location.href = url;
+                return false;
+            })
         });
     </script>
 </body>
