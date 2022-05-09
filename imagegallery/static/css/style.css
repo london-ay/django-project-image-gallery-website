@@ -627,3 +627,12 @@ select:not([multiple]) {
 
     .tm-social-links li { margin-right: 3px; }
 }
+
+@media (max-width: 334px) {
+    .navbar .container-fluid {
+        flex-direction: column;
+    }
+    .navbar .navbar-brand {
+        margin-right: 0;
+    }
+}
