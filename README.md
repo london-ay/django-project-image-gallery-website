@@ -6,13 +6,13 @@ This is a Photo Gallery Project Website developed with a **Python/Django** back-
 
 Back-End Programming Language: **Python/Django** 
 
+Front-End: **CSS, JS, HTML**
+
 Database: **SQLite**
 
 Version Control System: **Git**
 
 Source Control Management: **GitHub**
-
-Front-End: **CSS, JS, HTML**
 
 Font Library: **Font Awesome**
 
