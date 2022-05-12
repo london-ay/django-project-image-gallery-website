@@ -46,22 +46,18 @@
             <div class="col-lg-12 col-12 mb-5">
                 <h2 class="tm-text-primary mb-5 text-center">Contact Me</h2>
                 <form id="contact-form" action="" method="POST" class="tm-contact-form mx-auto">
+                    {% csrf_token %}
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control rounded-0" placeholder="Name" required />
+                        {{ form.name }}
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control rounded-0" placeholder="Email" required />
+                        {{ form.email }}
                     </div>
                     <div class="form-group">
-                        <select class="form-control" id="contact-select" name="inquiry">
-                            <option value="-">Subject</option>
-                            <option value="sales">Sales &amp; Marketing</option>
-                            <option value="creative">Creative Design</option>
-                            <option value="uiux">UI / UX</option>
-                        </select>
+                        {{ form.subject }}
                     </div>
                     <div class="form-group">
-                        <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Message" required=></textarea>
+                        {{ form.message }}
                     </div>
 
                     <div class="form-group tm-text-right">

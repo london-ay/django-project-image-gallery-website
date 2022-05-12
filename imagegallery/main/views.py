@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Photo
+from .forms import MessageForm
 
 # Create your views here.
 site_url = 'http://127.0.0.1:8000'
@@ -20,4 +21,9 @@ def errorpage(request):
     return HttpResponse ('<h2 style= "background-color: red; ">This is an error page I decided.</h2>', status=404)
 
 def contact(request):
-    return render(request,'contact.html')
+    if request.method == "POST":
+        form = MessageForm(request.POST)
+        if form.is_valid:
+            form.save()
+    form = MessageForm()
+    return render(request,'contact.html', {'form': form})
