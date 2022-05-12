@@ -1,5 +1,5 @@
 from django.http import Http404, HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
 from .models import Photo
@@ -15,10 +15,6 @@ def photos(request):
     else:
         photos = Photo.objects.all()
     return render(request,'photos.html', {'photos': photos, 'site_url': site_url, 'query': query})
-#HttpResponse('<h1 style= "background-color: pink; " > My Portfolio  is here! </h1>')
-
-def errorpage(request):
-    return HttpResponse ('<h2 style= "background-color: red; ">This is an error page I decided.</h2>', status=404)
 
 def contact(request):
     if request.method == "POST":
@@ -27,3 +23,16 @@ def contact(request):
             form.save()
     form = MessageForm()
     return render(request,'contact.html', {'form': form})
+
+def photo_detail(request, title):
+    photo = get_object_or_404(Photo, title=title)
+    photo.views += 1
+    photo.save()
+    
+    latest_photos = Photo.objects.all().order_by('created_at')[:4]
+    
+    context = {
+        'photo': photo,
+        'latest_photos': latest_photos
+    }
+    return render(request, 'photo-detail.html', context)

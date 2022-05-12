@@ -8,6 +8,7 @@ class Photo(models.Model):
     created_at = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=64)
     photo = models.ImageField()
+    views = models.PositiveIntegerField(default=0)
     
     def __str__(self):
         return self.title
