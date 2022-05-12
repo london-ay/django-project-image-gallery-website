@@ -341,6 +341,10 @@ p, .tm-text-gray { color: #999; }
     font-size: 68.5%;
 }
 
+.tm-gallery {
+    background: #fff;
+}
+
 .tm-gallery div.d-block { animation: show .5s ease; }
 
 @keyframes show {
