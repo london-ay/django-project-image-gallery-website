@@ -1,6 +1,9 @@
 # Image Gallery Website Project
 
-This is a Photo Gallery Project Website developed with a **Python/Django** back-end programming language and **SQLite** Database Management System  .
+This is a Photo Gallery Project Website developed with a **Python/Django** back-end programming language and **SQLite** Database Management System.
+
+![alt text](https://github.com/london-ay/django-project-image-gallery-website/documentation/ig_search-functionality1.jpg?raw=true)
+
 
 ## Technologies used:
 
