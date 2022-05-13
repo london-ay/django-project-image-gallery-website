@@ -3,7 +3,7 @@
 This is a Photo Gallery Project Website developed with a **Python/Django** back-end programming language and **SQLite** Database Management System. 
 
 ![Website Image](https://github.com/london-ay/django-project-image-gallery-website/blob/main/documentation/ig_search-functionality1.jpg?raw=true)
-![Mobile Compatibility Image](https://github.com/london-ay/django-project-image-gallery-website/blob/main/documentation/ig_search-functionality1.jpg?raw=true)
+![Mobile Compatibility Image](https://github.com/london-ay/django-project-image-gallery-website/blob/main/documentation/ig-mobile-search-functionality.jpg?raw=true)
 
 
 
