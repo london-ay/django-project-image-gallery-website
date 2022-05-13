@@ -4,7 +4,9 @@ This is a Photo Gallery Project Website developed with a **Python/Django** back-
 
 ![Website Image](https://github.com/london-ay/django-project-image-gallery-website/blob/main/documentation/ig_search-functionality1.jpg?raw=true)
 
-#It's Mobile Friendly
+# It's Mobile Friendly
+
+
 ![Mobile Compatibility Image](https://github.com/london-ay/django-project-image-gallery-website/blob/main/documentation/ig-mobile-search-functionality.jpg?raw=true)
 
 ## Technologies used:
