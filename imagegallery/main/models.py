@@ -7,6 +7,7 @@ from django.db import models
 class Photo(models.Model):
     created_at = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=64)
+    alt_text = models.CharField(max_length=64, blank=True)
     photo = models.ImageField()
     views = models.PositiveIntegerField(default=0)
     
