@@ -27,6 +27,18 @@
                         {{ form.message }}
                     </div>
 
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+
+                        <script>
+                            document.getElementById("contact-form").scrollIntoView();
+                        </script>
+                    {% endif %}
+
                     <div class="form-group tm-text-right">
                         <button type="submit" class="btn btn-primary">Send</button>
                     </div>

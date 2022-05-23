@@ -584,6 +584,13 @@ select:not([multiple]) {
     opacity: 1; /* Firefox */
 }
 
+.messages {
+    padding-left: 0;
+}
+.alert {
+    list-style: none;
+}
+
 @media (max-width: 991px) {
     .navbar-collapse {
         position: fixed;

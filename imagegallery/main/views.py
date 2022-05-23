@@ -1,6 +1,7 @@
 from django.http import Http404, HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.contrib import messages
 
 from .models import Photo
 from .forms import MessageForm
@@ -20,7 +21,13 @@ def contact(request):
     if request.method == "POST":
         form = MessageForm(request.POST)
         if form.is_valid:
-            form.save()
+            try:
+                form.save()
+                messages.success(request, "Your message has been sent!")
+            except:
+                messages.error(request, "Message could not be sent")
+        else:
+            messages.error(request, "Message could not be sent")
     form = MessageForm()
     return render(request,'contact.html', {'form': form})
 
